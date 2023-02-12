@@ -1,0 +1,36 @@
+{
+    "name": "New Tax Regime",
+    "description": "New tax regime revised in 2023",
+    "taxRates": [
+        {
+            "start": 0,
+            "end": 300000,
+            "rate": 0
+        },
+        {
+            "start": 300000,
+            "end": 600000,
+            "rate": 5
+        },
+        {
+            "start": 600000,
+            "end": 900000,
+            "rate": 10
+        },
+        {
+            "start": 900000,
+            "end": 1200000,
+            "rate": 15
+        },
+        {
+            "start": 1200000,
+            "end": 1500000,
+            "rate": 20
+        },
+        {
+            "start": 1500000,
+            "end": -1,
+            "rate": 30
+        }
+    ] 
+}

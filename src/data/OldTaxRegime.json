@@ -1,0 +1,26 @@
+{
+    "name": "Traditional Tax Regime",
+    "description": "Traditional tax regime",
+    "taxRates": [
+        {
+            "start": 0,
+            "end": 250000,
+            "rate": 0
+        },
+        {
+            "start": 250000,
+            "end": 500000,
+            "rate": 5
+        },
+        {
+            "start": 500000,
+            "end": 1000000,
+            "rate": 20
+        },
+        {
+            "start": 1000000,
+            "end": -1,
+            "rate": 30
+        }
+    ] 
+}

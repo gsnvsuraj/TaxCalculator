@@ -1,3 +1,17 @@
+html {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	min-height: 100%;
+	min-width: 100%;
+	overflow-x: hidden;
+}
+
 :root {
 	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 	line-height: 1.5;
@@ -16,7 +30,7 @@
 }
 
 .header {
-	font-size: 1.5em;
+	font-size: 1.2em;
 	line-height: 1.1;
 	background-color: #1e1e1e;
 	padding: 2px;
@@ -43,19 +57,19 @@ button:focus-visible {
 }
 
 .taxInput {
-	font-size: 1.2em;
-  	padding: 20px;
+	font-size: 1em;
+  	padding: 15px;
   	margin: 20px;
 }
 
 .taxTable {
-	font-size: 1.2em;
-  	padding: 10px;
+	font-size: 1em;
+  	padding: 15px;
   	margin: 20px;
 	border-collapse: collapse;
 }
 
-.taxTable > tr > th, td {
+.taxTable > tbody > tr > th, td {
 	border: 2px solid #ccc;
 	padding: 15px;
 }
@@ -65,6 +79,13 @@ button:focus-visible {
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: space-around;
+}
+
+.footer {
+	background-color: #1e1e1e;
+	padding: 2px;
+	width: 100%;
+	margin-top: 20px;
 }
 
 @media (prefers-color-scheme: light) {

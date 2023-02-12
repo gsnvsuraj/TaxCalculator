@@ -11,8 +11,8 @@ function App() {
 
 			<NewRegime />
 
-			<footer>
-				<p>* Note : The exact tax amout can vary, so use this as a reference only.</p>
+			<footer className='footer'>
+				<p><b>* Note :</b> The exact tax amout can vary, so use this as a reference only.</p>
 			</footer>
 
     	</div>

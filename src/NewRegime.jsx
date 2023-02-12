@@ -7,51 +7,25 @@ function NewRegime() {
 
     const [amount, setAmount] = useState(0);
     const [tax, setTax] = useState(0);
-
-    const handleChange = (event) => {
-        setAmount(event.target.value);
-    };
+    const [taxPercent, setTaxPercent] = useState(0.0);
 
     const handleFormSubmit = (event) => {
         event.preventDefault();
-        calculateTax(amount);
+        const inputAmount = event.target.amountInput.value;
+        setAmount(inputAmount);
+        calculateTax(inputAmount);
     };
 
 	const convertToLocaleString = (parameter) => {
 		return parameter.toLocaleString('hi');
 	};
 
-	const calculateTaxForSlab = (amount, slab) => {
-
-		var taxSlab = 0;
-		
-		if (amount <= 700000)
-            taxSlab = 0;
-
-        else {
-                
-			if (amount > slab.start) {
-				
-				let endLimit = slab.end;
-				if (slab.end == -1)
-					endLimit = Infinity;
-
-				let limit = Math.min(endLimit, amount);
-				taxSlab = (limit - slab.start) * slab.rate / 100;
-			}
-
-        }
-
-		return Math.ceil(taxSlab);
-    
-	};
-
     const calculateTax = (amount) => {
 
-        if (amount <= 700000)
+        if (amount <= 700000) {
             setTax(0);
-
-        else {
+            setTaxPercent(0);
+        } else {
 
             let calTax = 0;
             for (let slab of taxInfo.taxRates) {
@@ -69,6 +43,7 @@ function NewRegime() {
             }
 
             setTax(Math.ceil(calTax));
+            setTaxPercent((calTax*100 / amount).toFixed(1));
     
         }
 
@@ -79,11 +54,13 @@ function NewRegime() {
 			<div className="regimeInput">
 				<h2>{taxInfo.name}</h2>
 				<form onSubmit={handleFormSubmit}>
-					Total Income : <input type="text" value={convertToLocaleString(amount)} onChange={handleChange} min={0} className="taxInput" />
+					Total Income : <input type="text" name="amountInput" min={0} placeholder={0} className="taxInput" />
 					<br />
 					<button type="submit">Submit</button>
 				</form>
-				<h2>Tax : &#8377; {convertToLocaleString(tax)}</h2>
+				<h3>Tax : &#8377; {convertToLocaleString(tax)}</h3>
+                <h3>Remaining Amount : &#8377; {convertToLocaleString(amount - tax)}</h3>
+                <h4>Total Tax percentage : {parseFloat(taxPercent).toFixed(1)}%</h4>
 			</div>
 
 			<div className="regimeOutput">

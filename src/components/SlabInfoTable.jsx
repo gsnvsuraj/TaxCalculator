@@ -38,26 +38,28 @@ function SlabInfoTable(props) {
 
 			<table className="taxTable">
 
-				<tr>
-					<th>Income Tax Slab</th>
-					<th>Tax Rate</th>
-					<th>Your Tax</th>
-				</tr>
-				{props.taxRates.map(( rates, index ) => {
-					return (
-						<tr key={index}>
-							<td>&#8377; {convertToLocaleString(rates.start)} {' - '} {rates.end != -1 ? convertToLocaleString(rates.end) : 'Above'}</td>
-							<td>{rates.rate + '%'}</td>
-							<td>&#8377; {convertToLocaleString(calculateTaxForSlab(props.amount, rates))}</td>
-						</tr>
-					);
-				})}
-				{
+				<tbody>
 					<tr>
-						<th colSpan="2">Total</th>
-						<th>&#8377; {convertToLocaleString(props.tax)}</th>
+						<th>Income Tax Slab</th>
+						<th>Tax Rate</th>
+						<th>Your Tax</th>
 					</tr>
-				}
+					{props.taxRates.map(( rates, index ) => {
+						return (
+							<tr key={index}>
+								<td>&#8377; {convertToLocaleString(rates.start)} {' - '} {rates.end != -1 ? convertToLocaleString(rates.end) : 'Above'}</td>
+								<td>{rates.rate + '%'}</td>
+								<td>&#8377; {convertToLocaleString(calculateTaxForSlab(props.amount, rates))}</td>
+							</tr>
+						);
+					})}
+					{
+						<tr>
+							<th colSpan="2">Total</th>
+							<th>&#8377; {convertToLocaleString(props.tax)}</th>
+						</tr>
+					}
+				</tbody>
 			</table>
 
         </div>

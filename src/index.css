@@ -36,6 +36,7 @@ body {
 	padding: 2px;
 	margin-bottom: 20px;
 	width: 100%;
+	color: #ffffff;
 }
 
 button {
@@ -49,6 +50,7 @@ button {
 	cursor: pointer;
 	transition: border-color 0.25s;
 	margin: 10px;
+	color: #ffffff;
 }
 
 button:focus,
@@ -86,6 +88,7 @@ button:focus-visible {
 	padding: 2px;
 	width: 100%;
 	margin-top: 20px;
+	color: #ffffff;
 }
 
 @media (prefers-color-scheme: light) {

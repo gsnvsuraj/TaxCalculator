@@ -5,13 +5,19 @@ import taxInfo from './data/NewTaxRegime.json';
 
 function NewRegime() {
 
+    const [inputAmt, setInputAmt] = useState('');
     const [amount, setAmount] = useState(0);
     const [tax, setTax] = useState(0);
     const [taxPercent, setTaxPercent] = useState(0.0);
 
+    const handleInputChange = (event) => {
+        const temp = event.target.value.replaceAll(',', '')
+        setInputAmt( convertToLocaleString(Number(temp)) );
+    }
+
     const handleFormSubmit = (event) => {
         event.preventDefault();
-        const inputAmount = event.target.amountInput.value;
+        const inputAmount = event.target.amountInput.value.replaceAll(',', '');
         setAmount(inputAmount);
         calculateTax(inputAmount);
     };
@@ -54,7 +60,7 @@ function NewRegime() {
 			<div className="regimeInput">
 				<h2>{taxInfo.name}</h2>
 				<form onSubmit={handleFormSubmit}>
-					Total Income : <input type="text" name="amountInput" min={0} placeholder={0} className="taxInput" />
+					Total Income : <input type="text" name="amountInput" min={0} value={inputAmt} placeholder={0} onChange={handleInputChange} className="taxInput" />
 					<br />
 					<button type="submit">Submit</button>
 				</form>

@@ -10,9 +10,20 @@ function NewRegime() {
     const [tax, setTax] = useState(0);
     const [taxPercent, setTaxPercent] = useState(0.0);
 
+    const checkAmountString = (str) => {
+
+        const re = /^[0-9,]*$/;
+        return re.test(str);
+    
+    }
+
     const handleInputChange = (event) => {
-        const temp = event.target.value.replaceAll(',', '')
-        setInputAmt( convertToLocaleString(Number(temp)) );
+
+        if ( checkAmountString(event.target.value) ) {
+            const temp = event.target.value.replaceAll(',', '')
+            setInputAmt( convertToLocaleString(Number(temp)) );
+        }
+
     }
 
     const handleFormSubmit = (event) => {

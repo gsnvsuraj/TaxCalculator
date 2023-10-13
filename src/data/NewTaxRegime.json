@@ -1,6 +1,7 @@
 {
     "name": "New Tax Regime",
     "description": "New tax regime revised in 2023",
+    "exception": 750000,
     "taxRates": [
         {
             "start": 0,

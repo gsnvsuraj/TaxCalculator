@@ -39,7 +39,7 @@ function NewRegime() {
 
     const calculateTax = (amount) => {
 
-        if (amount <= 700000) {
+        if (amount <= taxInfo.exception) {
             setTax(0);
             setTaxPercent(0);
         } else {

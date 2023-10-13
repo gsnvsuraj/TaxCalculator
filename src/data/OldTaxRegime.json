@@ -1,6 +1,7 @@
 {
     "name": "Traditional Tax Regime",
     "description": "Traditional tax regime",
+    "exception": 500000,
     "taxRates": [
         {
             "start": 0,

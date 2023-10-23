@@ -11,7 +11,7 @@ function SlabInfoTable(props) {
 
 		var taxSlab = 0;
 		
-		if (amount <= 700000)
+		if (amount <= props.exception)
             taxSlab = 0;
 
         else {

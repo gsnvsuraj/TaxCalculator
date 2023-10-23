@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import SlabInfoTable from './components/SlabInfoTable';
-import taxInfo from './data/NewTaxRegime.json';
 
 
-function NewRegime() {
+function Regime({taxInfo}) {
 
     const [inputAmt, setInputAmt] = useState('');
     const [amount, setAmount] = useState(0);
@@ -81,7 +80,7 @@ function NewRegime() {
 			</div>
 
 			<div className="regimeOutput">
-				<SlabInfoTable amount={amount} taxRates={taxInfo.taxRates} tax={tax} />
+				<SlabInfoTable amount={amount} taxRates={taxInfo.taxRates} tax={tax} exception={taxInfo.exception} />
 			</div>
 
         </div>
@@ -89,4 +88,4 @@ function NewRegime() {
     
 }
 
-export default NewRegime;
+export default Regime;

@@ -1,6 +1,11 @@
-import NewRegime from './NewRegime';
+import { useState } from 'react';
+import Regime from './Regime';
+import newTaxInfo from './data/NewTaxRegime.json';
+import oldTaxInfo from './data/OldTaxRegime.json';
 
 function App() {
+
+	const [taxInfoData, setTaxInfoData] = useState(newTaxInfo);
 
   	return (
     	<div className="App">
@@ -9,7 +14,10 @@ function App() {
 				<h1>Tax Calculator</h1>
 			</header>
 
-			<NewRegime />
+			<button type='button' onClick={() => setTaxInfoData(newTaxInfo)}>{newTaxInfo.name}</button>
+			<button type='button' onClick={() => setTaxInfoData(oldTaxInfo)}>{oldTaxInfo.name}</button>
+
+			<Regime taxInfo={taxInfoData} />
 
 			<footer className='footer'>
 				<p><b>* Note :</b> The exact tax amout can vary, so use this as a reference only.</p>

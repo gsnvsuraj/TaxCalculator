@@ -20,9 +20,7 @@ concurrency:
 
 jobs:
   build:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+    name: Build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -43,6 +41,9 @@ jobs:
           name: production-files
           path: ./dist
   deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     name: Deploy
     needs: build
     runs-on: ubuntu-latest
@@ -54,7 +55,5 @@ jobs:
           name: production-files
           path: ./dist
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist 
+        id: deployment
+        uses: actions/deploy-pages@v3

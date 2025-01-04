@@ -22,7 +22,7 @@ Tax Engine is a web-based application that helps individuals calculate their inc
 ## 🛠️ Technologies Used
 - **Frontend**: React, HTML, CSS
 - **Styling**: CSS variables for light/dark mode
-- **Build Tool**: npm
+- **Build Tool**: npm, vite
 - **Hosting**: GitHub Pages
 
 ---
@@ -36,6 +36,7 @@ Tax Engine is a web-based application that helps individuals calculate their inc
   - Above ₹10,00,000: **30%**
 - **Deductions & Exemptions**:
   - Section 80C (e.g., PPF, ELSS, etc.): Up to ₹1,50,000
+  - Section 80CCD (e.g., NPS): Up to ₹50,000
   - Section 80D (Health Insurance Premium): Variable
   - House Rent Allowance (HRA): Exemption available
   - Interest on Home Loan (Section 24b): Deduction up to ₹2,00,000
@@ -60,6 +61,7 @@ Tax Engine is a web-based application that helps individuals calculate their inc
 ### Prerequisites
 - **Node.js** (v14 or higher)
 - **npm**
+- **vite**
 
 ### Steps to Run Locally
 1. **Clone the Repository**:
@@ -78,11 +80,11 @@ Tax Engine is a web-based application that helps individuals calculate their inc
 1. **Start the Development Server**
    Run the project in development mode:
 
-    ```
-    npm start
+    ```bash
+    npm run dev
     ```
 
-The application will be available at http://localhost:3000 in your browser.
+The application will be available at http://localhost:5173/TaxEngine/ in your browser.
 
 ---
 

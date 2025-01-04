@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import SlabInfoTable from './components/SlabInfoTable';
+import SlabInfoTable from './SlabInfoTable.jsx';
 
 
 function Regime({taxInfo}) {

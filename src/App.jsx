@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Regime from './Regime';
+import Regime from './components/Regime.jsx';
 import newTaxInfo from './data/NewTaxRegime.json';
 import oldTaxInfo from './data/OldTaxRegime.json';
 
@@ -11,7 +11,7 @@ function App() {
     	<div className="App">
 
 			<header className="header">
-				<h1>Tax Calculator</h1>
+				<h1>Tax Engine</h1>
 			</header>
 
 			<button type='button' onClick={() => setTaxInfoData(newTaxInfo)}>{newTaxInfo.name}</button>
@@ -28,4 +28,4 @@ function App() {
 
 }
 
-export default App
+export default App;

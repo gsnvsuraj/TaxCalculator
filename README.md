@@ -2,6 +2,8 @@
 
 Tax Engine is a web-based application that helps individuals calculate their income tax liability under both the **Old Tax Regime** and the **New Tax Regime** in India. It provides a user-friendly interface for comparing the two regimes and assists users in making informed decisions about which regime suits them best. The website has been hosted [here](https://gsnvsuraj.github.io/TaxCalculator).
 
+[![Deploy Tax Engine App](https://github.com/gsnvsuraj/TaxEngine/actions/workflows/deploy.yml/badge.svg)](https://github.com/gsnvsuraj/TaxEngine/actions/workflows/deploy.yml)
+
 ---
 
 ## 🚀 Features

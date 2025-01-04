@@ -1,9 +1,3 @@
-html {
-	width: 100%;
-	margin: 0;
-	padding: 0;
-}
-
 body {
 	margin: 0;
 	padding: 0;
@@ -13,30 +7,43 @@ body {
 }
 
 :root {
+	--bg-color: #ffffff;
+	--text-color: #213547;
+	--heading-color: #2c3e50;
+	--heading-color-bg: #ffffff;
+	--border-color: #ddd;
+	--table-header-bg: #f4f4f4;
+	--table-row-bg: #f9f9f9;
+	--input-bg-color: #f9f9f9;
+	--input-border-color: #dcdcdc;
+}
+
+[data-theme="dark"] {
+	--bg-color: #242424;
+	--text-color: #ffffffde;
+	--heading-color: #f39c12;
+	--heading-color-bg: #1e1e1e;
+	--border-color: #444;
+	--table-header-bg: #2c2c2c;
+	--table-row-bg: #1e1e1e;
+	--input-bg-color: #2d3748;
+	--input-border-color: #4a5568;
+}
+
+:root {
 	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 	line-height: 1.5;
 	font-weight: 400;
 	text-align: center;
 
-	color-scheme: light dark;
-	color: rgba(255, 255, 255, 0.87);
-	background-color: #242424;
+	color: var(--text-color);
+	background-color: var(--bg-color);
 
 	font-synthesis: none;
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-text-size-adjust: 100%;
-}
-
-.header {
-	font-size: 1.2em;
-	line-height: 1.1;
-	background-color: #1e1e1e;
-	padding: 2px;
-	margin-bottom: 20px;
-	width: 100%;
-	color: #ffffff;
 }
 
 button {
@@ -62,6 +69,9 @@ button:focus-visible {
 	font-size: 1em;
   	padding: 15px;
   	margin: 20px;
+	background-color: inherit;
+	color: var(--text-color);
+	border-color: var(--input-border-color);
 }
 
 .taxTable {
@@ -81,19 +91,4 @@ button:focus-visible {
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: space-around;
-}
-
-.footer {
-	background-color: #1e1e1e;
-	padding: 2px;
-	width: 100%;
-	margin-top: 20px;
-	color: #ffffff;
-}
-
-@media (prefers-color-scheme: light) {
-	:root {
-		color: #213547;
-		background-color: #ffffff;
-	}
 }

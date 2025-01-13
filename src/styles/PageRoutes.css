@@ -1,0 +1,14 @@
+.content {
+    padding: 1rem 2rem;
+    height: 100%;
+}
+
+.home-coming {
+    position: absolute;
+    right: 2rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: inherit;
+}

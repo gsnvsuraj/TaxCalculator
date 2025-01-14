@@ -14,6 +14,8 @@ body {
 	--border-color: #ddd;
 	--table-header-bg: #f4f4f4;
 	--table-row-bg: #f9f9f9;
+	--table-row-alt-bg: #f2f2f2;
+	--table-row-hover-bg: #e0e0e0;
 	--input-bg-color: #f9f9f9;
 	--input-border-color: #dcdcdc;
 }
@@ -24,8 +26,10 @@ body {
 	--heading-color: #f39c12;
 	--heading-color-bg: #1e1e1e;
 	--border-color: #444;
-	--table-header-bg: #2c2c2c;
-	--table-row-bg: #1e1e1e;
+	--table-header-bg: #151515;
+	--table-row-bg: #2e2e2e;
+	--table-row-alt-bg: #1e1e1e;
+	--table-row-hover-bg: #444444;
 	--input-bg-color: #2d3748;
 	--input-border-color: #4a5568;
 }

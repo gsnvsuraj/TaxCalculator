@@ -1,0 +1,47 @@
+[
+  {
+    "aspect": "Tax Slabs",
+    "oldRegime": "Multiple slabs with progressive rates starting from 5% to 30%",
+    "newRegime": "Simplified slabs with rates starting from 5% to 30% but with lower thresholds"
+  },
+  {
+    "aspect": "Deductions Allowed",
+    "oldRegime": "Allows deductions like 80C (₹1.5 lakh), 80D (health insurance), HRA, etc.",
+    "newRegime": "No major deductions allowed except employer's NPS contribution (Section 80CCD(2))"
+  },
+  {
+    "aspect": "Exemptions",
+    "oldRegime": "Includes exemptions like Leave Travel Allowance (LTA), House Rent Allowance (HRA), and Standard Deduction",
+    "newRegime": "Limited exemptions; Standard Deduction of ₹50,000 is allowed for salaried individuals (from FY 2023-24)"
+  },
+  {
+    "aspect": "Rebate under Section 87A",
+    "oldRegime": "Rebate of up to ₹12,500 for individuals with income up to ₹5 lakh",
+    "newRegime": "Rebate of up to ₹25,000 for individuals with income up to ₹7 lakh (from FY 2023-24)"
+  },
+  {
+    "aspect": "Flexibility",
+    "oldRegime": "More beneficial for those with significant investments and expenses eligible for deductions",
+    "newRegime": "Beneficial for those with minimal investments and simpler tax filing needs"
+  },
+  {
+    "aspect": "Tax Filing Complexity",
+    "oldRegime": "Requires maintaining detailed documentation for claiming deductions and exemptions",
+    "newRegime": "Simpler tax filing process with fewer documents needed"
+  },
+  {
+    "aspect": "Standard Deduction",
+    "oldRegime": "Standard deduction of ₹50,000 for salaried individuals",
+    "newRegime": "Standard deduction of ₹50,000 included for salaried individuals (from FY 2023-24)"
+  },
+  {
+    "aspect": "Suitability",
+    "oldRegime": "Best for individuals who can claim significant deductions and exemptions",
+    "newRegime": "Best for individuals who prefer lower tax rates without deductions"
+  },
+  {
+    "aspect": "Applicability",
+    "oldRegime": "Optional, taxpayers need to choose this regime explicitly while filing returns",
+    "newRegime": "Default option, taxpayers can opt for the old regime if beneficial"
+  }
+]

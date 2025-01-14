@@ -1,0 +1,44 @@
+.comparison-container {
+    color: var(--text-color);
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    color: var(--title-color);
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    font-size: 1rem;
+}
+
+.comparison-table th,
+.comparison-table td {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    text-align: center;
+}
+
+.comparison-table th {
+    background-color: var(--table-header-bg);
+}
+
+.comparison-table tr:nth-child(odd) {
+    background-color: var(--table-row-bg);
+}
+
+.comparison-table tr:nth-child(even) {
+    background-color: var(--table-row-alt-bg);
+}
+
+.comparison-table tr:hover {
+    background-color: var(--table-row-hover-bg);
+}
+
+.comparison-table td {
+    vertical-align: middle;
+}

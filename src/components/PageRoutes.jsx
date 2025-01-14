@@ -1,24 +1,25 @@
 import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom';
 import Home from './Home.jsx';
+import RegimeComparison from './RegimeComparison.jsx';
 import Calculator from './Calculator.jsx';
 import FAQPage from './FAQPage.jsx';
 import '../styles/PageRoutes.css';
-
-const BASE_PATH = '/TaxEngine';
+import {ROUTES, BASE_PATH} from './Constants.jsx';
 
 const PageRoutes = () => {
     return (
         <Router basename={BASE_PATH}>
             <div className="content">
 
-                <Link to="/" className="home-coming">
+                <Link to={ROUTES.HOME} className="home-coming">
                     🏠
                 </Link>
 
                 <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/calculate" element={<Calculator />}/>
-                    <Route path="/faq" element={<FAQPage />}/>
+                    <Route path={ROUTES.HOME} element={<Home />} />
+                    <Route path={ROUTES.COMPARISON} element={<RegimeComparison />}/>
+                    <Route path={ROUTES.CALCULATOR} element={<Calculator />}/>
+                    <Route path={ROUTES.FAQ} element={<FAQPage />}/>
                 </Routes>
 
             </div>

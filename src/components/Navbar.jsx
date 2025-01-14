@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/Navbar.css';
+import {APP_NAME} from './Constants.jsx';
 
 const Navbar = () => {
 
@@ -18,7 +19,7 @@ const Navbar = () => {
     return (
         <nav className="navbar">
             <div className="navbar-brand">
-                Tax Engine
+                {APP_NAME}
             </div>
             <div className="navbar-actions">
                 <button className="theme-toggle-btn" onClick={toggleTheme}>

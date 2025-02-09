@@ -57,7 +57,7 @@ function Regime({taxInfo}) {
 			</div>
 
 			<div className="regimeOutput">
-				<SlabInfoTable amount={amount} taxRates={taxInfo.taxRates} tax={tax} exemption={taxInfo.exemption}
+				<SlabInfoTable amount={amount - taxInfo.deduction} taxRates={taxInfo.taxRates} tax={tax} exemption={taxInfo.exemption}
                                deduction={taxInfo.deduction} cess={taxInfo.cess} totalTax={totalTax} />
 			</div>
 

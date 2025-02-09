@@ -85,7 +85,7 @@ button:focus-visible {
 	border-collapse: collapse;
 }
 
-.taxTable > tbody > tr > th, td {
+.taxTable > thead > tr > th, tbody > tr > th, td {
 	border: 2px solid #ccc;
 	padding: 15px;
 }

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import SlabInfoTable from './SlabInfoTable.jsx';
+import { currency, convertToLocalFormat, calculateTax, calculateCess, calculateTaxPercentage } from './logic.jsx';
 
 
 function Regime({taxInfo}) {
@@ -7,6 +8,7 @@ function Regime({taxInfo}) {
     const [inputAmt, setInputAmt] = useState('');
     const [amount, setAmount] = useState(0);
     const [tax, setTax] = useState(0);
+    const [totalTax, setTotalTax] = useState(0);
     const [taxPercent, setTaxPercent] = useState(0.0);
 
     const checkAmountString = (str) => {
@@ -20,7 +22,7 @@ function Regime({taxInfo}) {
 
         if ( checkAmountString(event.target.value) ) {
             const temp = event.target.value.replaceAll(',', '')
-            setInputAmt( convertToLocaleString(Number(temp)) );
+            setInputAmt( convertToLocalFormat(Number(temp)) );
         }
 
     }
@@ -29,41 +31,16 @@ function Regime({taxInfo}) {
         event.preventDefault();
         const inputAmount = event.target.amountInput.value.replaceAll(',', '');
         setAmount(inputAmount);
-        calculateTax(inputAmount);
+
+        const calculatedTax = calculateTax(taxInfo, inputAmount);
+        const cess = calculateCess(taxInfo.cess, calculatedTax);
+        const percentage = calculateTaxPercentage(calculatedTax + cess, inputAmount);
+
+        setTax(calculatedTax);
+        setTotalTax(calculatedTax + cess);
+        setTaxPercent(percentage);
     };
 
-	const convertToLocaleString = (parameter) => {
-		return parameter.toLocaleString('hi');
-	};
-
-    const calculateTax = (amount) => {
-
-        if (amount <= taxInfo.exception) {
-            setTax(0);
-            setTaxPercent(0);
-        } else {
-
-            let calTax = 0;
-            for (let slab of taxInfo.taxRates) {
-                
-                if (amount > slab.start) {
-                    
-                    let endLimit = slab.end;
-                    if (slab.end == -1)
-                        endLimit = Infinity;
-
-                    let limit = Math.min(endLimit, amount);
-                    calTax += (limit - slab.start) * slab.rate / 100;
-                }
-
-            }
-
-            setTax(Math.ceil(calTax));
-            setTaxPercent((calTax*100 / amount).toFixed(1));
-    
-        }
-
-    };
 
     return (
         <div className="container">
@@ -74,13 +51,14 @@ function Regime({taxInfo}) {
 					<br />
 					<button type="submit">Submit</button>
 				</form>
-				<h3>Tax : &#8377; {convertToLocaleString(tax)}</h3>
-                <h3>Remaining Amount : &#8377; {convertToLocaleString(amount - tax)}</h3>
-                <h4>Total Tax percentage : {parseFloat(taxPercent).toFixed(1)}%</h4>
+				<h3>Estimated Tax : {currency} {convertToLocalFormat(totalTax)}</h3>
+                <h3>Remaining Amount : {currency} {convertToLocalFormat(amount - totalTax)}</h3>
+                <h4>Estimated Total Tax percentage : {taxPercent}%</h4>
 			</div>
 
 			<div className="regimeOutput">
-				<SlabInfoTable amount={amount} taxRates={taxInfo.taxRates} tax={tax} exception={taxInfo.exception} />
+				<SlabInfoTable amount={amount} taxRates={taxInfo.taxRates} tax={tax} exemption={taxInfo.exemption}
+                               deduction={taxInfo.deduction} cess={taxInfo.cess} totalTax={totalTax} />
 			</div>
 
         </div>

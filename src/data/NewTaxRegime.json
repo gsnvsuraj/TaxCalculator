@@ -2,7 +2,7 @@
     "name": "New Tax Regime",
     "description": "New tax regime revised in 2023",
     "exemption": 700000,
-    "deduction": 50000,
+    "deduction": 75000,
     "taxRates": [
         {
             "start": 0,
@@ -11,16 +11,16 @@
         },
         {
             "start": 300000,
-            "end": 600000,
+            "end": 700000,
             "rate": 5
         },
         {
-            "start": 600000,
-            "end": 900000,
+            "start": 700000,
+            "end": 1000000,
             "rate": 10
         },
         {
-            "start": 900000,
+            "start": 1000000,
             "end": 1200000,
             "rate": 15
         },

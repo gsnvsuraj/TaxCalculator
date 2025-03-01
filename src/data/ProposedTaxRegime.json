@@ -1,0 +1,44 @@
+{
+    "name": "Proposed Tax Regime",
+    "description": "Proposed tax regime from 2025-26",
+    "exemption": 750000,
+    "deduction": 120000,
+    "taxRates": [
+        {
+            "start": 0,
+            "end": 400000,
+            "rate": 0
+        },
+        {
+            "start": 400000,
+            "end": 800000,
+            "rate": 5
+        },
+        {
+            "start": 800000,
+            "end": 1200000,
+            "rate": 10
+        },
+        {
+            "start": 1200000,
+            "end": 1600000,
+            "rate": 15
+        },
+        {
+            "start": 1600000,
+            "end": 2000000,
+            "rate": 20
+        },
+        {
+            "start": 2000000,
+            "end": 2400000,
+            "rate": 25
+        },
+        {
+            "start": 2400000,
+            "end": -1,
+            "rate": 30
+        }
+    ],
+    "cess": 4
+}

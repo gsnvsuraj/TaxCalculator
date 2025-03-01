@@ -35,6 +35,10 @@
         {
             "question": "How do I know which regime is better for me ?",
             "answer": "The app provides a side-by-side comparison of tax liability under both regimes to help you choose the better option."
+        },
+        {
+            "question": "Is the calculation applicable for all age groups ?",
+            "answer": "The calculation is based on the Tax payer's age is less than 60 years."
         }
     ] 
 }

@@ -1,6 +1,6 @@
 {
-    "name": "Traditional Tax Regime",
-    "description": "Traditional tax regime",
+    "name": "Old Tax Regime",
+    "description": "Old tax regime",
     "exemption": 500000,
     "deduction": 50000,
     "taxRates": [

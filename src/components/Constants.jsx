@@ -7,6 +7,7 @@ export const BASE_PATH = '/TaxEngine';
 export const ROUTES = {
     HOME: "/",
     CALCULATOR: "/calculator",
+    REVERSE_CALCULATOR: "/reverseCalculator",
     COMPARISON: "/comparison",
     FAQ: "/faq"
 };

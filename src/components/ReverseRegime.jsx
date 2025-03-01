@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import SlabInfoTable from './SlabInfoTable.jsx';
-import { currency, convertToLocalFormat, checkAmountString, calculateTax, calculateCess, calculateTaxPercentage } from './logic.jsx';
+import { currency, convertToLocalFormat, checkAmountString, reverseCalculateAmount, calculateTax, calculateCess, calculateTaxPercentage } from './logic.jsx';
 
 
 function Regime({taxInfo}) {
@@ -23,12 +23,13 @@ function Regime({taxInfo}) {
     const handleFormSubmit = (event) => {
         event.preventDefault();
         const inputAmount = event.target.amountInput.value.replaceAll(',', '');
-        setAmount(inputAmount);
 
-        const calculatedTax = calculateTax(taxInfo, inputAmount);
+        const earnAmount = reverseCalculateAmount(taxInfo, inputAmount);
+        const calculatedTax = calculateTax(taxInfo, earnAmount);
         const cess = calculateCess(taxInfo.cess, calculatedTax);
-        const percentage = calculateTaxPercentage(calculatedTax + cess, inputAmount);
+        const percentage = calculateTaxPercentage(calculatedTax + cess, earnAmount);
 
+        setAmount(earnAmount);
         setTax(calculatedTax);
         setTotalTax(calculatedTax + cess);
         setTaxPercent(percentage);
@@ -40,12 +41,12 @@ function Regime({taxInfo}) {
 			<div className="regimeInput">
 				<h2>{taxInfo.name}</h2>
 				<form onSubmit={handleFormSubmit}>
-					Total Income : <input type="text" name="amountInput" min={0} value={inputAmt} placeholder={0} onChange={handleInputChange} className="taxInput" />
+					Desired Amount : <input type="text" name="amountInput" min={0} value={inputAmt} placeholder={0} onChange={handleInputChange} className="taxInput" />
 					<br />
 					<button type="submit">Submit</button>
 				</form>
+                <h3>Estimated Amount : {currency} {convertToLocalFormat(amount)}</h3>
 				<h3>Estimated Tax : {currency} {convertToLocalFormat(totalTax)}</h3>
-                <h3>Remaining Amount : {currency} {convertToLocalFormat(amount - totalTax)}</h3>
                 <h4>Estimated Total Tax percentage : {taxPercent}%</h4>
 			</div>
 

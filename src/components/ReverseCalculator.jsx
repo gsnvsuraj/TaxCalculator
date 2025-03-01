@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import proposedTaxInfo from '../data/ProposedTaxRegime.json';
 import newTaxInfo from '../data/NewTaxRegime.json';
 import oldTaxInfo from '../data/OldTaxRegime.json';
-import Regime from './Regime.jsx';
+import ReverseRegime from './ReverseRegime.jsx';
 
 const Calculator = () => {
 
@@ -11,13 +11,13 @@ const Calculator = () => {
     return (
         <div>
 
-            <h1>Tax Calculator</h1>
+            <h1>Reverse Tax Calculator</h1>
 
             <button type='button' onClick={() => setTaxInfoData(proposedTaxInfo)}>{proposedTaxInfo.name}</button>
             <button type='button' onClick={() => setTaxInfoData(newTaxInfo)}>{newTaxInfo.name}</button>
             <button type='button' onClick={() => setTaxInfoData(oldTaxInfo)}>{oldTaxInfo.name}</button>
 
-            <Regime taxInfo={taxInfoData}/>
+            <ReverseRegime taxInfo={taxInfoData}/>
 
         </div>
     );

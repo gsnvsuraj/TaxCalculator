@@ -20,6 +20,12 @@ const Home = () => {
 
             <br />
 
+            <Link to={ROUTES.REVERSE_CALCULATOR}>
+                <button type='button' className="navigation-button">Reverse Calculator</button>
+            </Link>
+
+            <br />
+
             <Link to={ROUTES.FAQ}>
                 <button type='button' className="navigation-button">FAQ</button>
             </Link>

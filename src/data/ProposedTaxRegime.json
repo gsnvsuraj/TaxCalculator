@@ -1,8 +1,8 @@
 {
     "name": "Proposed Tax Regime",
     "description": "Proposed tax regime from 2025-26",
-    "exemption": 750000,
-    "deduction": 120000,
+    "exemption": 1200000,
+    "deduction": 75000,
     "taxRates": [
         {
             "start": 0,

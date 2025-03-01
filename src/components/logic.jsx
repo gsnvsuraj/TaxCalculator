@@ -1,10 +1,35 @@
 const rupeeSymbol = "₹";
 const indianStringFormat = "en-IN";
+const amountStep = 100;
+const amountRegularExpression = /^[0-9,]*$/;
 
 export const currency = rupeeSymbol;
 
 export const convertToLocalFormat = (parameter) => {
     return parameter.toLocaleString(indianStringFormat);
+};
+
+export const checkAmountString = (str) => {
+    return amountRegularExpression.test(str);
+}
+
+export const reverseCalculateAmount = (taxInfo, desiredAmount) => {
+
+    let amount = Number(desiredAmount);
+    let found = false;
+
+    while (!found) {
+        let tax = calculateTax(taxInfo, amount);
+        let totalTax = tax + calculateCess(taxInfo.cess, tax);
+
+        if (amount - totalTax >= desiredAmount)
+            found = true;
+        else
+            amount += amountStep;
+    }
+
+    return amount;
+
 };
 
 export const calculateTax = (taxInfo, amount) => {
